@@ -3,14 +3,16 @@
     background-attachment: fixed;
     color: white;
     font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    color-scheme: dark;
 }
 
 body {
+    position: relative;
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-size: 1.5em;
 }
 
 body::before {
@@ -32,17 +34,69 @@ main {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
+    padding: 1rem;
+    margin-bottom: 10rem;
+    gap: 10rem;
+}
+
+h2 {
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: rgb(50, 150, 255);
+}
+
+a:visited {
+    color: rgb(150, 100, 255);
 }
 
 #greeting {
     margin-top: 10rem;
-    font-size: 1.5rem;
+}
+
+#toolsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1rem;
+    margin: 0 10rem;
+}
+
+.gray {
+    color: rgb(150, 150, 150);
+    font-size: 0.8em;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    place-items: center;
+    gap: 1rem;
+}
+
+.card h3 {
+    margin: 0.5em 0;
+}
+
+.card p {
+    margin: 0;
 }
 
 @media (max-width: 768px) {
-    .greeting {
+    #greeting {
         margin-top: 2rem;
+    }
+
+    h1, #toolsGrid {
+        margin: 0;
+    }
+
+    main {
+        gap: 5rem;
     }
 }
