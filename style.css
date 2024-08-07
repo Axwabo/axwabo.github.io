@@ -4,6 +4,7 @@
     color: white;
     font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
     color-scheme: dark;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -87,6 +88,41 @@ a:visited {
     margin: 0;
 }
 
+.arrow-right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 0.3em solid transparent;
+    border-bottom: 0.3em solid transparent;
+    border-left: 0.5em solid currentColor;
+}
+
+#boopContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    animation: rainbow 10s linear infinite;
+    font-weight: bold;
+}
+
+#boopDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5em;
+}
+
+#boop {
+    transition: transform 0.1s;
+}
+
+#boop:active {
+    transform: scale(0.95);
+}
+
 @media (max-width: 768px) {
     #greeting {
         margin-top: 2rem;
@@ -98,5 +134,29 @@ a:visited {
 
     main {
         gap: 5rem;
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        color: hsl(0, 100%, 50%);
+    }
+    16% {
+        color: hsl(60, 100%, 50%);
+    }
+    33% {
+        color: hsl(120, 100%, 50%);
+    }
+    50% {
+        color: hsl(180, 100%, 50%);
+    }
+    66% {
+        color: hsl(240, 100%, 80%);
+    }
+    83% {
+        color: hsl(300, 100%, 60%);
+    }
+    100% {
+        color: hsl(360, 100%, 50%);
     }
 }
