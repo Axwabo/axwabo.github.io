@@ -24,9 +24,15 @@ body::before {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background-image: url("thumbnail.webp");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-image: url("thumbnail.webp"),
+    radial-gradient(circle, black 1%, transparent 2%),
+    radial-gradient(circle, rgb(163, 163, 163) 0%, transparent 1%),
+    radial-gradient(circle, white 0%, transparent 1%),
+    radial-gradient(circle, rgb(128, 0, 128) 0%, transparent 1%);
+    background-repeat: no-repeat, repeat, repeat, repeat, repeat;
+    background-size: 100% auto, 10rem 40rem, 10rem 40rem, 10rem 40rem, 10rem 40rem;
+    background-position-y: 0, 0, 10rem, 20rem, 30rem;
+    animation: background 60s linear infinite;
     opacity: 0.3;
 }
 
@@ -239,5 +245,17 @@ a:visited {
     }
     100% {
         color: hsl(360, 100%, 50%);
+    }
+}
+
+@keyframes background {
+    0% {
+        background-position-x: 0, 0, 10rem, 20rem, 30rem;
+    }
+    50% {
+        background-position-y: 0, 5rem, 15rem, 25rem, 35rem;
+    }
+    100% {
+        background-position-x: 0, 40rem, 50rem, 60rem, 70rem;
     }
 }
