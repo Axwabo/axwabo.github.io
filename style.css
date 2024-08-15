@@ -120,7 +120,44 @@ a:visited {
 
 .social-card h3 {
     margin-bottom: 0;
-    white-space: nowrap;
+    transition: scale 0.2s;
+}
+
+.social-banner {
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.social-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 125%;
+    height: 125%;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    z-index: -1;
+    transition: 0.2s;
+    transform: translate(-10%, -10%);
+}
+
+.social-card:hover .social-banner {
+    transform: translateY(-0.5rem);
+}
+
+.social-card:hover .social-banner::before {
+    background-color: rgba(50, 50, 255, 0.5);
+}
+
+.social-card:hover h3 {
+    scale: 1.1;
+}
+
+.social-banner__brand {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 #boopContainer {
