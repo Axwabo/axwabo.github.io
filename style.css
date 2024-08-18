@@ -205,6 +205,7 @@ a.hover-background:hover::before, .social-card:hover .hover-background::before {
     display: inline-block;
     width: 1.5em;
     height: 1em;
+    transform: translateY(0.15em);
 }
 
 @media (max-width: 768px) {
