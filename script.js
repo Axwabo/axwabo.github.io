@@ -3,8 +3,6 @@ let boopCount = 0;
 const boopElement = document.getElementById("boopCounter");
 
 function checkBoopArea(e) {
-    if (e.target.matches(":active"))
-        return;
     const w = e.target.offsetWidth;
     const h = e.target.offsetHeight;
     const x = e.offsetX;
@@ -40,4 +38,4 @@ function boop(e) {
         });
 }
 
-document.getElementById("boop").addEventListener("mousemove", checkBoopArea);
+document.getElementById("boop").addEventListener("mousedown", checkBoopArea);

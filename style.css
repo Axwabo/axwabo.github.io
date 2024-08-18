@@ -32,6 +32,7 @@ body::before {
     background-repeat: no-repeat, repeat, repeat, repeat, repeat;
     background-size: 100% auto, 10rem 40rem, 10rem 40rem, 10rem 40rem, 10rem 40rem;
     background-position-y: 0, 0, 10rem, 20rem, 30rem;
+    background-attachment: scroll, fixed, fixed, fixed, fixed;
     animation: background 60s linear infinite;
     opacity: 0.3;
 }
