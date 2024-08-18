@@ -21,6 +21,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-size: 1.5em;
+    line-height: 1.3;
 }
 
 body::before {
@@ -179,6 +180,13 @@ a:visited {
 
 #boop.boop:active {
     transform: scale(0.95);
+}
+
+.ace-logo {
+    background-image: linear-gradient(to bottom, black 25%, rgb(163, 163, 163) 25.1%, rgb(163, 163, 163) 50%, white 50.1%, white 75%, rgb(128, 0, 128) 75.1%);
+    display: inline-block;
+    width: 1.5em;
+    height: 1em;
 }
 
 @media (max-width: 768px) {
