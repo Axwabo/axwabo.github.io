@@ -9,7 +9,7 @@ function checkBoopArea(e) {
     const h = e.target.offsetHeight;
     const x = e.offsetX;
     const y = e.offsetY;
-    e.target.className = x > w * 0.36 && x < w * 0.64 && y > h * 0.58 && y < h * 0.63 ? "boop" : "";
+    e.target.className = x > w * 0.35 && x < w * 0.65 && y > h * 0.53 && y < h * 0.67 ? "boop" : "";
 }
 
 function boop(e) {
