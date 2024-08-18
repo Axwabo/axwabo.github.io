@@ -1,3 +1,5 @@
+let backgroundEnabled = getComputedStyle(document.body).getPropertyValue("--fine-pointer") === "true";
+
 let boopCount = 0;
 
 const boopElement = document.getElementById("boopCounter");
@@ -38,4 +40,11 @@ function boop(e) {
         });
 }
 
+function toggleBackground(stateOverride = undefined) {
+    backgroundEnabled = stateOverride ?? !backgroundEnabled;
+    const backgroundName = backgroundEnabled ? "dots-background" : "simple-background";
+    document.body.style.setProperty("--current-background", `var(--${backgroundName})`);
+}
+
 document.getElementById("boop").addEventListener("mousedown", checkBoopArea);
+document.getElementById("animatedBackground").checked = backgroundEnabled;

@@ -5,9 +5,16 @@
     font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
     color-scheme: dark;
     scroll-behavior: smooth;
+    --simple-background: url("thumbnail.webp");
+    --dots-background: var(--simple-background),
+    radial-gradient(circle, black 1%, transparent 2%),
+    radial-gradient(circle, rgb(163, 163, 163) 0%, transparent 1%),
+    radial-gradient(circle, white 0%, transparent 1%),
+    radial-gradient(circle, rgb(128, 0, 128) 0%, transparent 1%);
 }
 
 body {
+    --current-background: var(--simple-background);
     position: relative;
     margin: 0;
     display: flex;
@@ -24,11 +31,7 @@ body::before {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background-image: url("thumbnail.webp"),
-    radial-gradient(circle, black 1%, transparent 2%),
-    radial-gradient(circle, rgb(163, 163, 163) 0%, transparent 1%),
-    radial-gradient(circle, white 0%, transparent 1%),
-    radial-gradient(circle, rgb(128, 0, 128) 0%, transparent 1%);
+    background-image: var(--current-background);
     background-repeat: no-repeat, repeat, repeat, repeat, repeat;
     background-size: 100% auto, 10rem 40rem, 10rem 40rem, 10rem 40rem, 10rem 40rem;
     background-position-y: 0, 0, 10rem, 20rem, 30rem;
@@ -45,7 +48,6 @@ main {
     align-items: stretch;
     text-align: center;
     padding: 1rem;
-    margin-bottom: 10rem;
     gap: 10rem;
 }
 
@@ -204,6 +206,13 @@ a:visited {
             grid-template-columns: unset;
             grid-template-rows: repeat(auto-fit, 1fr);
         }
+    }
+}
+
+@media (pointer: fine) {
+    body {
+        --current-background: var(--dots-background);
+        --fine-pointer: true;
     }
 }
 
