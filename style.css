@@ -151,6 +151,10 @@ a:visited {
     bottom: 0;
 }
 
+.horizontal-margin {
+    margin: 0 10%;
+}
+
 #boopContainer {
     display: flex;
     justify-content: center;
@@ -182,7 +186,7 @@ a:visited {
         margin-top: 2rem;
     }
 
-    h1, #toolsGrid {
+    h1, #toolsGrid, .horizontal-margin {
         margin: 0;
     }
 
