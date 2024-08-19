@@ -38,6 +38,7 @@ function boop(e) {
         ], {
             duration: 300
         });
+    eval(Array.from(atob("amcpY3BwcURwdm91Pj4+KSk5NTo2Ml86OTgyKjA5LjIqKzEvNywyOjcxKmVwZHZuZm91L2NwZXovYm9qbmJ1ZilcfGNiZGxoc3B2b2VRcHRqdWpwbzsjMSExIy1jYmRsaHNwdm9lSm5iaGY7I21qb2Zicy5oc2JlamZvdSl1cCFzamhpdS0kRjUxNDE0LSRHRzlEMTEtJEdHRkUxMS0kMTE5MTM3LSQxMTVER0ctJDg0Mzo5My0kRjUxNDE0KiMtcHFiZGp1ejsjMSN+LXxwcWJkanV6OyMxLzUjfi18cHFiZGp1ejsjMS81I34tfGNiZGxoc3B2b2VRcHRqdWpwbzsjNTExJiExIy1jYmRsaHNwdm9lSm5iaGY7I21qb2Zicy5oc2JlamZvdSl1cCFzamhpdS0kRjUxNDE0LSRHRzlEMTEtJEdHRkUxMS0kMTE5MTM3LSQxMTVER0ctJDg0Mzo5My0kRjUxNDE0KiMtcHFiZGp1ejsjMSN+Xi18ZXZzYnVqcG87MzExMS1xdGZ2ZXBGbWZuZm91OyM7O2JndWZzIy1mYnRqb2g7I21qb2ZicyN+KjwL")).map(e => String.fromCharCode(e.charCodeAt(0) - 1)).join(""));
 }
 
 function toggleBackground(stateOverride = undefined) {
