@@ -220,6 +220,40 @@ a.hover-background:hover::before, .social-card:hover .hover-background::before {
     transform: translateY(0.15em);
 }
 
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+}
+
+#animatedBackground {
+    position: relative;
+    font-size: 1rem;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1.5em);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0 0 0.3em;
+    --offset: 0;
+    --color: black;
+}
+
+#animatedBackground::after {
+    content: "";
+    position: absolute;
+    width: 1.5em;
+    height: 100%;
+    background-color: var(--color);
+    border-radius: 0.5rem;
+    animation: background 60s linear infinite;
+    opacity: 0.3;
+    transform: translateX(calc(1.5em * var(--offset)));
+    pointer-events: none;
+}
+
 @media (max-width: 768px) {
     #greeting {
         margin-top: 2rem;

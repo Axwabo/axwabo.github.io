@@ -1,8 +1,14 @@
-let backgroundEnabled = getComputedStyle(document.body).getPropertyValue("--fine-pointer") === "true";
+const animateByDefault = getComputedStyle(document.body).getPropertyValue("--fine-pointer") === "true";
+
+let backgroundEnabled = 0;
 
 let boopCount = 0;
 
 const boopElement = document.getElementById("boopCounter");
+
+const animatedBackgroundElement = document.getElementById("animatedBackground");
+
+const animatedBackgroundOptionColors = [ "black", "#0f0", "red" ];
 
 function checkBoopArea(e) {
     const w = e.target.offsetWidth;
@@ -42,10 +48,25 @@ function boop(e) {
 }
 
 function toggleBackground(stateOverride = undefined) {
-    backgroundEnabled = stateOverride ?? !backgroundEnabled;
-    const backgroundName = backgroundEnabled ? "dots-background" : "simple-background";
+    if (++backgroundEnabled > 2)
+        backgroundEnabled = 0;
+    if (stateOverride !== undefined)
+        backgroundEnabled = stateOverride;
+    const backgroundName = backgroundEnabled === 0 && animateByDefault || backgroundEnabled === 1 ? "dots-background" : "simple-background";
     document.body.style.setProperty("--current-background", `var(--${backgroundName})`);
+    animatedBackgroundElement.style.setProperty("--offset", backgroundEnabled);
+    animatedBackgroundElement.style.setProperty("--color", animatedBackgroundOptionColors[backgroundEnabled]);
+    localStorage.setItem("Axwabo:backgroundEnabled", backgroundEnabled);
 }
 
 document.getElementById("boop").addEventListener("mousedown", checkBoopArea);
-document.getElementById("animatedBackground").checked = backgroundEnabled;
+toggleBackground(parseInt(localStorage.getItem("Axwabo:backgroundEnabled")) || 0);
+
+document.getElementById("animatedBackground").addEventListener("click", cycleBackground);
+
+function cycleBackground(e) {
+    const state = e.target.matches("span")
+        ? Array.from(e.target.parentElement.children).indexOf(e.target)
+        : undefined;
+    toggleBackground(state);
+}
