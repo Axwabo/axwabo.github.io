@@ -289,7 +289,14 @@ a.hover-background:hover::before, .social-card:hover .hover-background::before {
 @media (pointer: fine) {
     body {
         --current-background: var(--dots-background);
-        --fine-pointer: true;
+        --preferred-high-res-background: true;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        --current-background: var(--simple-background);
+        --preferred-high-res-background: false;
     }
 }
 

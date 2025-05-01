@@ -1,4 +1,4 @@
-const animateByDefault = getComputedStyle(document.body).getPropertyValue("--fine-pointer") === "true";
+const animateByDefault = getComputedStyle(document.body).getPropertyValue("--preferred-high-res-background") === "true";
 
 let backgroundEnabled = 0;
 
