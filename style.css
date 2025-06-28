@@ -206,6 +206,7 @@ a.hover-background:hover::before, .social-card:hover .hover-background::before {
 
 #boop {
     transition: transform 50ms;
+    user-select: none;
 }
 
 #boop.boop:active {
